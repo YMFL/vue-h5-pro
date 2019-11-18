@@ -82,7 +82,6 @@ export default {
       }
     },
     async sendSmsHandler () {
-      await sendSms(this.ruleForm.username)
       this.qrHasCLick = true
       // 请求接口
       this.qrtime = 60
@@ -92,13 +91,23 @@ export default {
           clearInterval(setTime)
         }
       }, 1000)
+      // await sendSms(this.ruleForm.username)
+      // this.qrHasCLick = true
+      // // 请求接口
+      // this.qrtime = 60
+      // let setTime = setInterval(() => {
+      //   this.qrtime--
+      //   if (this.qrtime === 0) {
+      //     clearInterval(setTime)
+      //   }
+      // }, 1000)
     },
     async submitHandler () {
       if (!this.ruleForm.password) {
         Toast('请输入验证码')
         return false
       }
-      let result = await postLogin(this.ruleForm)
+      let result = { token: '12132312' }
       if (result.token) {
         setToken(result.token)
         Toast('登录成功！')
@@ -106,6 +115,19 @@ export default {
       } else {
         Toast('登陆失败！')
       }
+
+      // if (!this.ruleForm.password) {
+      //   Toast('请输入验证码')
+      //   return false
+      // }
+      // let result = await postLogin(this.ruleForm)
+      // if (result.token) {
+      //   setToken(result.token)
+      //   Toast('登录成功！')
+      //   this.$router.push({ path: '/home' })
+      // } else {
+      //   Toast('登陆失败！')
+      // }
     }
   }
 }

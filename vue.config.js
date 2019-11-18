@@ -26,13 +26,9 @@ module.exports = {
   // 修改的配置
   devServer: {
     proxy: {
-      '/carinsure-service': {
-        changeOrigin: true,
-        target: 'https://insurance-test.ylfin.com'
-      },
       '/auth-service': {
         changeOrigin: true,
-        target: 'https://portal-test.ylfin.com'
+        target: 'https://xxxx-test.pighub.com'
       }
     }
   },
