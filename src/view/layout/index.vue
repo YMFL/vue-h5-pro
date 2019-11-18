@@ -78,6 +78,7 @@ export default {
           }
         }
         this.checkRouter()
+        // 路由跳转后 指定方向为下一页
         this.$nextTick(() => {
           this.routerDire = 'forward'
         })
