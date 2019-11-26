@@ -18,8 +18,6 @@ npm run build-qa
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
+
+###

@@ -6,17 +6,24 @@
     <div class="backBtn">
       <van-button class="subBtn" @click="outHanlder" type="warning">登出</van-button>
     </div>
+    <div>
+      <svg-icon icon-class="eye"/>
+    </div>
+    <div>
+      <svg-icon icon-class="dashboard"/>
+    </div>
+    <div>
+      <svg-icon icon-class="link"/>
+    </div>
   </div>
 </template>
 <script>
 import {
-  Cell,
   Field,
   Button,
   Toast,
   Uploader,
-  Dialog,
-  CellGroup
+  Dialog
 } from 'vant'
 
 import {
@@ -26,12 +33,10 @@ import {
 export default {
   name: 'certification',
   components: {
-    [Cell.name]: Cell,
     [Button.name]: Button,
     [Toast.name]: Toast,
     [Uploader.name]: Uploader,
     [Dialog.name]: Dialog,
-    [CellGroup.name]: CellGroup,
     [Field.name]: Field
   },
   data () {

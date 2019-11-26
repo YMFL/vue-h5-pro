@@ -16,7 +16,6 @@ import {
   Dialog,
   CellGroup
 } from 'vant'
-import { postCertify } from '@/api/index'
 
 export default {
   name: 'certification',

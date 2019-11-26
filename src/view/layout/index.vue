@@ -5,11 +5,11 @@
       :left-arrow="!tabShow"
       @click-left="onClickLeft">
     </van-nav-bar>
-    <transition :name="routerDire">
+    <transition :name="routerDirection">
       <keep-alive v-if="$route.meta.keepAlive">
-        <router-view class="router"></router-view>
+        <router-view/>
       </keep-alive>
-      <router-view class="router" v-else></router-view>
+      <router-view v-else/>
     </transition>
 
     <van-tabbar v-model="active" fixed v-if="tabShow">
@@ -39,7 +39,7 @@ export default {
       title: '首页',
       tabShow: false,
       // 页面切换方向
-      routerDire: 'forward'
+      routerDirection: 'forward'
     }
   },
   computed: {},
@@ -63,7 +63,7 @@ export default {
       this.title = this.$route.meta.title
     },
     onClickLeft () {
-      this.routerDire = 'back'
+      this.routerDirection = 'back'
       this.$router.back()
     }
   },
@@ -72,15 +72,15 @@ export default {
       handler: function (to, from) {
         if (Boolean(to.meta.tabNum) && Boolean(from.meta.tabNum)) {
           if (to.meta.tabNum > from.meta.tabNum) {
-            this.routerDire = 'back'
+            this.routerDirection = 'back'
           } else {
-            this.routerDire = 'forward'
+            this.routerDirection = 'forward'
           }
         }
         this.checkRouter()
         // 路由跳转后 指定方向为下一页
         this.$nextTick(() => {
-          this.routerDire = 'forward'
+          this.routerDirection = 'forward'
         })
       }
     }

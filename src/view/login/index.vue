@@ -48,7 +48,7 @@ import {
   Icon,
   CellGroup
 } from 'vant'
-import { sendSms, postLogin } from '@/api/index'
+// import { sendSms, postLogin } from '@/api/index'
 import { setToken } from '@/utils/auth'
 
 export default {

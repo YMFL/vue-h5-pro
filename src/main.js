@@ -5,8 +5,8 @@ import './permission'
 import store from '@/store'
 import 'normalize.css'
 import './less/global.less'
+import '@/icons' // icon
 
-console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === 'development') {
   const VConsole = require('vconsole')
   let x = new VConsole()
