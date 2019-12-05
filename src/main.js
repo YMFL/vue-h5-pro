@@ -6,6 +6,7 @@ import store from '@/store'
 import 'normalize.css'
 import './less/global.less'
 import '@/icons' // icon
+import '@/rem.js'
 
 if (process.env.NODE_ENV === 'development') {
   const VConsole = require('vconsole')
